@@ -2,8 +2,7 @@ import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
 import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
-import { stringify } from 'postcss'
- 
+
 export async function POST(req) {
  
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
@@ -90,6 +89,6 @@ export async function POST(req) {
   console.log('Webhook body:', body)
  
 
-  return json.send(evt);
+  return json.res(evt);
 }
  
