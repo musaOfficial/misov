@@ -2,6 +2,7 @@ import { Webhook } from 'svix'
 import { headers } from 'next/headers'
 import { WebhookEvent } from '@clerk/nextjs/server'
 import { createOrUpdateUser, deleteUser } from '@/lib/actions/user'
+import { stringify } from 'postcss'
  
 export async function POST(req) {
  
@@ -89,6 +90,6 @@ export async function POST(req) {
   console.log('Webhook body:', body)
  
 
-  return new Response('', { status: 200 })
+  return json.send(evt);
 }
  
