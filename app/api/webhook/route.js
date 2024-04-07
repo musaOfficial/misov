@@ -88,6 +88,9 @@ export async function POST(req) {
   console.log('Webhook body:', body)
  
 
-  return json.res(evt);
+  return Response.json({ message: evt });
 }
  
+export async function GET() {
+    return Response.json({ message: 'Hello World!' })
+  }
